@@ -42,11 +42,35 @@ void Q2(int *a,int size,int b){
         }
     }
 }
+
+void prtary(){
+    int a[5]={1,2,3,4,5};
+    int *p1=a;
+    int *p2=a;
+    printf("{1,2,3,4,5}\n");
+    printf("print:*(a++)=%d\n",*(p1++));
+    printf("print:*(++a)=%d\n",*(++p2));
+}
+
+void swap(int *a,int *b){
+    int tmp;
+    tmp=*a;
+    *a=*b;
+    *b=tmp;
+}
+
+void QuickSort(int *array,int left,int right){
+    if(left>right){
+        int i = left,j=right;
+    }
+}
+
 int main(){
     printf("This is c test\n");
     //linklist();
     int a[]={1,3,5,7,9};
     //Q1(&a[0],10);
-    Q2(&a[0],200,0);
+    //Q2(&a[0],200,0);
+    //prtary();
 }
 
