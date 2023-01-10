@@ -5,13 +5,48 @@ typedef struct node{
     int data;
     struct node *next;
 }Node;
+void add_node(Node **start,int value){
+    Node *new_node=(Node*)malloc(sizeof(Node));
+    new_node->data=value;
+    new_node->next=NULL;
+    if(*start==NULL){
+        *start=new_node;
+        return;
+    }
+    else{
+        Node *current;
+        current=*start;
+        while(current->next!=NULL){
+            current=current->next;
+        }
+        current->next=new_node;
+        return;
+    }
+}
 
 void linklist(){
-    Node a;
-    a.data=12;
-    printf("a is %d(ptr=%p).\n",a.data,a.next);
-    printf("memory is location of a is %p\n",&a);
+    Node *head=(Node*)malloc(sizeof(Node));
+    head->data=12;
+    head->next=NULL;
+    Node *node2=(Node*)malloc(sizeof(Node));
+    node2->data=13;
+    node2->next=NULL;
+    head->next=node2;
+    Node *node3=(Node*)malloc(sizeof(Node));
+    node3->data=14;
+    node3->next=NULL;
+    node2->next=node3;
+    Node *current=(Node*)malloc(sizeof(Node));
+    current=head;
+    while(current!=NULL){
+        printf("%d,",current->data);
+        current=current->next;
+    }
+    printf("\n");
+    //printf("a is %d(ptr=%p).\n",head->data,head->next);
+    //printf("memory is location of a is %p\n",&head);
 }
+
 void Q1(int *in, int size){
     int *ptr = in;
     for(int i=0;i<size;i++){
@@ -59,28 +94,38 @@ void swap(int *a,int *b){
     *b=tmp;
 }
 
-void QuickSort(int *data,int left,int right){
-    if(left>=right){return ;}
-
-    int i, j, pivot;
-    i = left+1;
-    j = right;
-    pivot = data[left];
-    while(i!=j){
-        while(data[i]<pivot && i<j){
-            i++; 
-        }
-        while(data[j]>pivot && i<j){
-            j--;
-        }
-        if(i>j){break;}
-        if (i<j){
-            swap(&data[i],&data[j]);
+int Partition(int *arr, int front, int end){
+    int pivot = arr[end];
+    int i = front -1;
+    for (int j = front; j < end; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            swap(&arr[i], &arr[j]);
         }
     }
-    swap(&data[left],&data[j]); 
-    QuickSort(data, left, j - 1);
-    QuickSort(data, j + 1, right);
+    i++;
+    swap(&arr[i], &arr[end]);
+    return i;
+}
+void QuickSort(int *arr, int front, int end){
+    if (front < end) {
+        int pivot = Partition(arr, front, end);
+        QuickSort(arr, front, pivot - 1);
+        QuickSort(arr, pivot + 1, end);
+    }
+}
+void swapchar(char* a, char* b) {
+    char t = *a;
+    *a = *b;
+    *b = t;
+}
+void reverseString(char* s, int sSize){
+    if (s == NULL) {return;}
+    int j = sSize - 1;
+    for (int i = 0; i < sSize/2; i++) {
+        swapchar( &s[i], &s[j] );
+        j--;
+    }
 }
 
 int main(){
@@ -90,9 +135,6 @@ int main(){
     //Q1(&a[0],10);
     //Q2(&a[0],200,0);
     //prtary();
-    QuickSort(a,0,5);
-    for(int i=0;i<5;i++){
-        printf("%d\n",a[i]);
-    }
+    //QuickSort(a,0,5);
 }
 
