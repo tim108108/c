@@ -59,18 +59,40 @@ void swap(int *a,int *b){
     *b=tmp;
 }
 
-void QuickSort(int *array,int left,int right){
-    if(left>right){
-        int i = left,j=right;
+void QuickSort(int *data,int left,int right){
+    if(left>=right){return ;}
+
+    int i, j, pivot;
+    i = left+1;
+    j = right;
+    pivot = data[left];
+    while(i!=j){
+        while(data[i]<pivot && i<j){
+            i++; 
+        }
+        while(data[j]>pivot && i<j){
+            j--;
+        }
+        if(i>j){break;}
+        if (i<j){
+            swap(&data[i],&data[j]);
+        }
     }
+    swap(&data[left],&data[j]); 
+    QuickSort(data, left, j - 1);
+    QuickSort(data, j + 1, right);
 }
 
 int main(){
     printf("This is c test\n");
     //linklist();
-    int a[]={1,3,5,7,9};
+    int a[5]={1,4,3,2,5};
     //Q1(&a[0],10);
     //Q2(&a[0],200,0);
     //prtary();
+    QuickSort(a,0,5);
+    for(int i=0;i<5;i++){
+        printf("%d\n",a[i]);
+    }
 }
 
