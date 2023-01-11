@@ -128,6 +128,23 @@ void reverseString(char* s, int sSize){
     }
 }
 
+int binsearch(int *arr,int key,int n){
+    int left=0,right=n;
+    while(left<=right){
+        int mid=(left+right)/2;
+        if(arr[mid]>key){
+            right=mid-1;
+        }
+        else if(arr[mid]<key){
+            left=mid+1;
+        }
+        else{
+            return mid;
+        }
+    }
+    return -1;
+}
+
 int main(){
     printf("This is c test\n");
     //linklist();
