@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
 typedef struct node{
@@ -145,13 +146,32 @@ int binsearch(int *arr,int key,int n){
     return -1;
 }
 
+#define SETBIT(a,pos) (a|=(1<<pos))
+#define CLRBIT(a,pos) (a&=~(1<<pos))
+#define TOGBIT(a,pos) (a^=(1<<pos))
+#define TESBIT(a,pos) (a&(1<<pos)) 
+
+int setbit(int a,int pos,bool b){
+    if(b){
+        return (a|(1<<pos));
+    }
+    return (a&~(1<<pos));
+}
+void string_reverse(char *ptr,int len){
+    int i=0,j=len-1;
+    while(i<j){
+    *(ptr+i)^=*(ptr+j);
+    *(ptr+j)^=*(ptr+i);
+    *(ptr+i)^=*(ptr+j);
+    i++;
+    j--;
+    }
+}
 int main(){
-    printf("This is c test\n");
-    //linklist();
-    int a[5]={1,4,3,2,5};
-    //Q1(&a[0],10);
-    //Q2(&a[0],200,0);
-    //prtary();
-    //QuickSort(a,0,5);
+    printf("This is c test!!\n");
+    
+    char c[]="hello word";//len=10
+    string_reverse(c,10);
+    printf("%s\n",c);
 }
 
