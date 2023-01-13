@@ -169,9 +169,6 @@ void string_reverse(char *ptr,int len){
 }
 int main(){
     printf("This is c test!!\n");
-    
     char c[]="hello word";//len=10
-    string_reverse(c,10);
-    printf("%s\n",c);
 }
 
