@@ -172,19 +172,20 @@ void point(){
     int *ptr=a;
     printf("*(ptr+0):%d\n",*ptr);
     printf("*(ptr+1):%d\n",*(ptr+1));
-    printf("*(ptr+2):%d\n",*(ptr+2));
-    printf("*(ptr+3):%d\n",*(ptr+3));
+    // printf("*(ptr+2):%d\n",*(ptr+2));
+    // printf("*(ptr+3):%d\n",*(ptr+3));
     printf("*(ptr+4):%d\n",*(ptr+4));//指向int的指標移動4個int(16byte)
     printf("*ptr+10:%d\n",*ptr+10);//指標的值(0)+10=10
     printf("ptr+0:%p\n",ptr);
     printf("ptr+1:%p\n",ptr+1);
-    printf("ptr+2:%p\n",ptr+2);
-    printf("ptr+3:%p\n",ptr+3);
+    // printf("ptr+2:%p\n",ptr+2);
+    // printf("ptr+3:%p\n",ptr+3);
     printf("ptr+4:%p\n",ptr+4);
     printf("ptr+5:%p\n",ptr+5);
-    printf("&a+0:%p\n",&a);//陣列的頭(&a[0])的位址
-    printf("&a+1:%p\n",&a+1);//陣列的頭(&a[0])增加一個a陣列長度的位址
-    printf("&(a[0])+1:%p\n",&(a[0])+1);
+    printf("&a+0     :%p\n",&a);//陣列的頭(&a[0])的位址
+    printf("&a+1     :%p\n",&a+1);//陣列的頭(&a[0])增加一個a陣列長度的位址
+    printf("&(a[0])+1:%p\n",&(a[0])+1);//陣列
+    printf("&(a)+1   :%p\n",&(a)+1);
 }
 
 int main(){
