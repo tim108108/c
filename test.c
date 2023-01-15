@@ -184,6 +184,7 @@ void point(){
     printf("ptr+5:%p\n",ptr+5);
     printf("&a+0:%p\n",&a);//陣列的頭(&a[0])的位址
     printf("&a+1:%p\n",&a+1);//陣列的頭(&a[0])增加一個a陣列長度的位址
+    printf("&(a[0])+1:%p\n",&(a[0])+1);
 }
 
 int main(){
