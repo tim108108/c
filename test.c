@@ -190,12 +190,8 @@ void point(){
 
 int main(){
     printf("This is c test!!\n");
-    int a[3]={1,2,3};
-    int *p[3]={&a[0],&a[1],&a[2]};
-    for (int i=0;i<3;i++){
-        *p[i]<<=2;//p<<=2
-        printf("%d\n",*p[i]);
-    }
-    // point();
+    char s[]="this is a test.";
+    string_reverse(s,15);
+    printf("%s\n",s);
 }
 
