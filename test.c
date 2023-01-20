@@ -193,5 +193,8 @@ int main(){
     char s[]="this is a test.";
     string_reverse(s,15);
     printf("%s\n",s);
+    for (int i=0;i<10;i++){
+        printf("%d\n",i);
+    }
 }
 
