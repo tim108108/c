@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <math.h>
 
 typedef struct node{
     int data;
@@ -115,19 +116,6 @@ void QuickSort(int *arr, int front, int end){
         QuickSort(arr, pivot + 1, end);
     }
 }
-void swapchar(char* a, char* b) {
-    char t = *a;
-    *a = *b;
-    *b = t;
-}
-void reverseString(char* s, int sSize){
-    if (s == NULL) {return;}
-    int j = sSize - 1;
-    for (int i = 0; i < sSize/2; i++) {
-        swapchar( &s[i], &s[j] );
-        j--;
-    }
-}
 
 int binsearch(int *arr,int key,int n){
     int left=0,right=n;
@@ -168,6 +156,7 @@ void string_reverse(char *ptr,int len){
     j--;
     }
 }
+
 void point(){
     int a[]={0,2,4,6,8};
     int *ptr=a;
@@ -189,18 +178,20 @@ void point(){
     printf("&(a)+1   :%p\n",&(a)+1);
 }
 
+double leibniz(int n){
+    double l=0;
+    for(int k=1;k<=n;k++){
+        l=l+pow(-1.0,k-1)/(2*k-1);
+    }
+    return 4*l;
+}
+
 int main(){
     printf("This is c test!!\n");
     char s[]="this is a test.";
     string_reverse(s,15);
     printf("%s\n",s);
-    printf("\n");
-    for(int i=1;i<10;i++){
-        for(int j=1;j<10;j++){
-            printf("%d*%d=%2d",i,j,i*j);
-            j==9?printf("\n"):printf(" ");
-        }
-    }
+    printf("%lf\n",leibniz(10000));
     printf("\n");
 }
 
