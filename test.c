@@ -157,6 +157,7 @@ int setbit(int a,int pos,bool b){
     }
     return (a&~(1<<pos));
 }
+
 void string_reverse(char *ptr,int len){
     int i=0,j=len-1;
     while(i<j){
@@ -193,8 +194,13 @@ int main(){
     char s[]="this is a test.";
     string_reverse(s,15);
     printf("%s\n",s);
-    for (int i=0;i<10;i++){
-        printf("%d\n",i);
+    printf("\n");
+    for(int i=1;i<10;i++){
+        for(int j=1;j<10;j++){
+            printf("%d*%d=%2d",i,j,i*j);
+            j==9?printf("\n"):printf(" ");
+        }
     }
+    printf("\n");
 }
 
