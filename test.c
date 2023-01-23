@@ -186,12 +186,18 @@ double leibniz(int n){
     return 4*l;
 }
 
+void lowercase(char *ptr,int len){
+    for(int i=0;i<len;i++){
+        *(ptr+i)|=(1<<5);
+    }
+}
+
 int main(){
-    printf("This is c test!!\n");
-    char s[]="this is a test.";
-    string_reverse(s,15);
+    printf("This is c !!\n");
+    char s[]="This Is a Test.";
+    // string_reverse(s,15);
+    lowercase(s,sizeof(s)-1);
     printf("%s\n",s);
-    printf("%lf\n",leibniz(10000));
     printf("\n");
 }
 
