@@ -186,17 +186,27 @@ double leibniz(int n){
     return 4*l;
 }
 
-void lowercase(char *ptr,int len){
-    for(int i=0;i<len;i++){
-        *(ptr+i)|=(1<<5);
+void uplowcase(char *ptr,int len,bool up){
+    if(up){
+        for(int i=0;i<len;i++){
+            if(*(ptr+i)<65||*(ptr+i)>122)continue;
+            *(ptr+i)&=~(1<<5);
+        }
+    }
+    else{
+        for(int i=0;i<len;i++){
+            *(ptr+i)|=(1<<5);
+        }
     }
 }
 
 int main(){
     printf("This is c !!\n");
-    char s[]="This Is a Test.";
+    char s[]="This is a Test.";
     // string_reverse(s,15);
-    lowercase(s,sizeof(s)-1);
+    uplowcase(s,sizeof(s)-1,true);
+    printf("%s\n",s);
+    uplowcase(s,sizeof(s)-1,false);
     printf("%s\n",s);
     printf("\n");
 }
