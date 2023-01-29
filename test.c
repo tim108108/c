@@ -38,8 +38,8 @@ void point(){
     int a[]={0,2,4,6,8};
     int *ptr=a;
     int b[5]={1,2,3,4,5};
-    int *p1=a;
-    int *p2=a;
+    int *p1=b;
+    int *p2=b;
     printf("{1,2,3,4,5}\n");
     printf("print:*(b++)=%d\n",*(p1++));
     printf("print:*(++b)=%d\n",*(++p2));
