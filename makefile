@@ -1,6 +1,9 @@
 
-all:test.c
-	gcc test.c -Wall -o test
+main:main.c test.o 
+	gcc main.c test.o -Wall -o main.out
+
+test.o:test.c linklist.h stringedit.h
+	gcc test.c -Wall -c
 
 clean:
-	rm test
+	rm *.o main.out
