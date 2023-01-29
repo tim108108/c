@@ -3,8 +3,8 @@
 #define TOGBIT(a,pos) (a^=(1<<pos))
 #define TESBIT(a,pos) (a&(1<<pos)) 
 
-void string_reverse(char *ptr,int len);
-void uplowcase(char *ptr,int len,bool up);
-int setbit(int a,int pos,bool b);
+void string_reverse(char *,int);
+void uplowcase(char *,int ,bool);
+int setbit(int ,int ,bool);
 void point();
-double leibniz(int n);
+double leibniz(int);
