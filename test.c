@@ -2,52 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <math.h>
-
-typedef struct node{
-    int data;
-    struct node *next;
-}Node;
-void add_node(Node **start,int value){
-    Node *new_node=(Node*)malloc(sizeof(Node));
-    new_node->data=value;
-    new_node->next=NULL;
-    if(*start==NULL){
-        *start=new_node;
-        return;
-    }
-    else{
-        Node *current;
-        current=*start;
-        while(current->next!=NULL){
-            current=current->next;
-        }
-        current->next=new_node;
-        return;
-    }
-}
-
-void linklist(){
-    Node *head=(Node*)malloc(sizeof(Node));
-    head->data=12;
-    head->next=NULL;
-    Node *node2=(Node*)malloc(sizeof(Node));
-    node2->data=13;
-    node2->next=NULL;
-    head->next=node2;
-    Node *node3=(Node*)malloc(sizeof(Node));
-    node3->data=14;
-    node3->next=NULL;
-    node2->next=node3;
-    Node *current=(Node*)malloc(sizeof(Node));
-    current=head;
-    while(current!=NULL){
-        printf("%d,",current->data);
-        current=current->next;
-    }
-    printf("\n");
-    //printf("a is %d(ptr=%p).\n",head->data,head->next);
-    //printf("memory is location of a is %p\n",&head);
-}
+#include "linklist.h"
 
 void Q1(int *in, int size){
     int *ptr = in;
