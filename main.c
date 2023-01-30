@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "stringedit.h"
 #include "linklist.h"
+#include "stringedit.h"
 
 int main(){
     printf("This is c !!\n");
@@ -11,6 +11,7 @@ int main(){
     printf("%s\n",s);
     uplowcase(s,sizeof(s)-1,true);
     printf("%s\n",s);
+    
     int a[]={1,2,3,4,5,6};
     NODE *first;
     first=creatList(a,sizeof(a)/sizeof(a[0]));
