@@ -8,6 +8,6 @@ typedef struct node NODE;
 NODE *creatList(int *,int);
 void printList(NODE *);
 void freeList(NODE *);
-void insertNode(NODE *,int);
 NODE *searchNode(NODE *,int);
-NODE *deleteNode(NODE *,int);
+void insertNode(NODE *,int);
+NODE *deleteNode(NODE *,NODE *);

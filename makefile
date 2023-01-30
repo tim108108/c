@@ -1,9 +1,9 @@
 
-main:main.c test.o 
-	gcc main.c test.o -Wall -o main.out
+main:main.c test.o linklist.o
+	gcc main.c test.o linklist.o -Wall -o main.out 
 
 test.o:test.c linklist.h stringedit.h
-	gcc test.c -Wall -c
+	gcc -Wall -c test.c 
 
 linklist.o:linklist.h
 	gcc linklist.c -Wall -c

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <math.h>
 
 void string_reverse(char *ptr,int len){
     int i=0,j=len-1;
@@ -61,11 +60,17 @@ void point(){
     printf("&(a[0])+1:%p\n",&(a[0])+1);//陣列
     printf("&(a)+1   :%p\n",&(a)+1);
 }
-
+double Pow(int a,int b){
+    double tmp=1;
+    for(int i=0;i<b;i++){
+        tmp*=a;
+    }
+    return tmp;
+}
 double leibniz(int n){
     double l=0;
     for(int k=1;k<=n;k++){
-        l=l+pow(-1.0,k-1)/(2*k-1);
+        l=l+Pow(-1.0,k-1)/(2*k-1);
     }
     return 4*l;
 }
