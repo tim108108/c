@@ -17,7 +17,7 @@ int main(){
     printList(first);
     insertNode(searchNode(first,3),0);
     printList(first);
-    freeList(first);
     deleteNode(first,searchNode(first,3));
     printList(first);
+    freeList(first);
 }
