@@ -23,7 +23,7 @@ NODE *creatList(int *arr,int len){
 void printList(NODE *first){
     NODE *ptr=first;
     if(first==NULL){
-        printf("List is empty.");
+        printf("error");
     }
     while (ptr!=NULL)
     {
