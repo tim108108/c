@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "linklist.h"
 #include "stringedit.h"
+#include "bitwise.h"
 
 int main(){
     printf("This is c !!\n");
@@ -11,7 +12,7 @@ int main(){
     printf("%s\n",s);
     uplowcase(s,sizeof(s)-1,true);
     printf("%s\n",s);
-    
+
     int a[]={1,2,3,4,5,6};
     NODE *first;
     first=creatList(a,sizeof(a)/sizeof(a[0]));
@@ -21,4 +22,7 @@ int main(){
     deleteNode(first,searchNode(first,3));
     printList(first);
     freeList(first);
+    showbinary(89);
+    fun1(a,100);
 }
+

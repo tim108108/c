@@ -4,4 +4,4 @@
 #define TESBIT(a,pos) (a&(1<<pos)) 
 
 int setbit(int ,int ,bool);/*setbit，目標,位置,set/cln*/
-char *dec2bin(int);
+void showbinary(int);
