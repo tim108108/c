@@ -149,13 +149,4 @@ void Q2(int *a,int size,int b){
         }
     }
 }
-// int main(){
-//     printf("This is c !!\n");
-//     char s[]="This is a Test.";
-//     // string_reverse(s,15);
-//     uplowcase(s,sizeof(s)-1,true);
-//     printf("%s\n",s);
-//     uplowcase(s,sizeof(s)-1,false);
-//     printf("%s\n",s);
-//     printf("\n");
-// }
+

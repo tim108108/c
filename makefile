@@ -12,4 +12,4 @@ bitwise.o:bitwise.h
 	gcc bitwise.c -Wall -c
 
 clean:
-	rm *.o main.out
+	rm *.o *.out

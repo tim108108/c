@@ -22,7 +22,8 @@ int main(){
     deleteNode(first,searchNode(first,3));
     printList(first);
     freeList(first);
-    showbinary(89);
-    fun1(a,100);
+    showbinary(4);
+    showbinary(4-1);
+    showbinary(4&3);
 }
 
