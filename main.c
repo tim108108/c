@@ -22,8 +22,8 @@ int main(){
     deleteNode(first,searchNode(first,3));
     printList(first);
     freeList(first);
+
     showbinary(4);
-    showbinary(4-1);
-    showbinary(4&3);
+    showbinary(bitwiz(4,1,set));
 }
 

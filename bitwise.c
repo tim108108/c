@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "bitwise.h"
 
 int setbit(int a,int pos,bool b){
     if(b){
@@ -20,4 +21,26 @@ void showbinary(int a){
         printf("%d",s[i]);
     }
     printf("\n");
+}
+
+int bitwiz(int itm,int loc,int typ){
+    switch (typ)
+    {
+    case set:
+        printf("set\n");
+        itm|=(1<<loc);
+        break;
+    case clr:
+        printf("clr\n");
+        itm&=~(1<<loc);
+        break;
+    case rev:
+        printf("rev\n");
+        itm^=(1<<loc);
+        break;
+    default:
+        printf("error\n");
+        break;
+    }
+    return itm;
 }
