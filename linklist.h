@@ -4,13 +4,11 @@ typedef struct node
     struct node *next;
 }NODE;
 
-typedef struct queue
+typedef struct queue //FIFO
 {
     NODE *front;
     NODE *rear;
 }QUE;
-// typedef struct node NODE;
-// typedef struct queue QUE;
 
 NODE *creatList(int *,int);
 void printList(NODE *);
