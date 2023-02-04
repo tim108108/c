@@ -1,9 +1,16 @@
-struct node
+typedef struct node
 {
     int data;
     struct node *next;
-};
-typedef struct node NODE;
+}NODE;
+
+typedef struct queue
+{
+    NODE *front;
+    NODE *rear;
+}QUE;
+// typedef struct node NODE;
+// typedef struct queue QUE;
 
 NODE *creatList(int *,int);
 void printList(NODE *);
@@ -11,3 +18,5 @@ void freeList(NODE *);
 NODE *searchNode(NODE *,int);
 void insertNode(NODE *,int);
 NODE *deleteNode(NODE *,NODE *);
+NODE *Qpush(NODE *,int);
+NODE *Qpop(NODE *);

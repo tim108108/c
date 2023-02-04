@@ -21,9 +21,16 @@ int main(){
     printList(first);
     deleteNode(first,searchNode(first,3));
     printList(first);
+
+    Qpush(first,12);
+    printList(first);
+    printList(Qpop(first));
+    printList(first);
     freeList(first);
 
-    showbinary(4);
-    showbinary(bitwiz(4,1,set));
+    // showbinary(4);
+    // showbinary(bitwiz(4,1,set));
+
+
 }
 

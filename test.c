@@ -149,4 +149,63 @@ void Q2(int *a,int size,int b){
         }
     }
 }
+void sizeQ(){
+    char *s = "hello"; 
+    char s1[]={'h','e','l','l','o'}; 
+    int s2[]={'h','e','l','l','o'}; 
+    printf("s=%ld,s1=%ld,s2=%ld\n",sizeof(s),sizeof(s1),sizeof(s2));//8,5,5*4
+}
 
+unsigned long long fib(int a){
+    int f0=0,f1=1,fn;
+    if(a==0){
+        return f0;
+    }
+    if(a==1)
+        return f1;
+    for(int i=2;i<=a;i++){
+        fn = f0+f1;
+        f0=f1;
+        f1=fn;
+    }
+    return fn;
+}
+
+void diamond(int a){
+    if(a%2){
+        int z=a/2,x=1;
+        for(int i=0;i<(a+1)/2;i++){
+            for(int j=0;j<z;j++){
+                printf(" ");
+            }
+            for(int k=0;k<x;k++){
+                printf("*");
+            }
+            x+=2;
+            z--;
+            printf("\n");
+        }
+        z=a-2,x=1;
+        for(int i=0;i<a/2;i++){
+            for(int j=0;j<x;j++){
+                printf(" ");
+            }
+            for(int k=0;k<z;k++){
+                printf("*");
+            }
+            x++;
+            z-=2;
+            printf("\n");
+        }
+    }
+    else
+        diamond(a+3);
+}
+
+void main(){
+    sizeQ();
+    // for(int i=0;i<40;i++){
+    //     printf("%llu\n",fib(i));
+    // }
+    diamond(11);
+}

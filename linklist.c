@@ -83,3 +83,22 @@ NODE *deleteNode(NODE *first,NODE *node){
     free(node);
     return first;
 }
+
+NODE *Qpush(NODE *first,int v){
+    NODE *q;
+    q = (NODE*) malloc(sizeof(NODE));
+    q->data=first->data;
+    first->data=v;
+    q->next=first->next;
+    first->next=q;
+    return first;
+}
+NODE *Qpop(NODE *first){
+    NODE *ptr,*end=first;
+    while (end->next){
+        ptr=end;
+        end=end->next;
+    }
+    ptr->next=NULL;
+    return end;
+}
