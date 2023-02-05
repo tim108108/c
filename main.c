@@ -5,6 +5,22 @@
 #include "stringedit.h"
 #include "bitwise.h"
 
+NODE *Xorop(NODE *x,NODE *y){
+    return (NODE *)((unsigned long)(x) ^ (unsigned long)(y));
+}
+
+void xinsert(NODE **current,int itm){
+    NODE *newnode;
+    newnode=(NODE *)malloc(sizeof(NODE));
+    newnode->data=itm;
+    
+    newnode->next=Xorop(*current,NULL);
+    if(*current){
+         (*current)->next=Xorop(newnode,Xorop((*current)->next,NULL));
+    }
+    *current=newnode;
+}
+
 int main(){
     printf("This is c !!\n");
     char s[]="This is a Test.";
@@ -21,16 +37,16 @@ int main(){
     printList(first);
     deleteNode(first,searchNode(first,3));
     printList(first);
-
     Qpush(first,12);
     printList(first);
     printList(Qpop(first));
     printList(first);
     freeList(first);
 
+    NODE *xlist;
+    xinsert(&xlist,1);
+
     // showbinary(4);
     // showbinary(bitwiz(4,1,set));
-
-
 }
 

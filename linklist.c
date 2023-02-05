@@ -93,6 +93,7 @@ NODE *Qpush(NODE *first,int v){
     first->next=q;
     return first;
 }
+
 NODE *Qpop(NODE *first){
     NODE *ptr,*end=first;
     while (end->next){
