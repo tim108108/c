@@ -211,12 +211,23 @@ int GCD(int a,int b){
         return GCD(b,r);
 }
 
+void bubble_sort(int *arr,int len){
+    for(int i=0;i<len;i++){
+        for(int j=0;j<i;j++){
+            if(arr[i]<arr[j]){
+                printf("i:%d,j:%d\n",i,j);
+                int tmp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=tmp;
+            }
+        }
+    }
+}
+
 void main(){
     // sizeQ();
     // for(int i=0;i<40;i++){
     //     printf("%llu\n",fib(i));
     // }
-    printf("%d\n",GCD(18,12));
-    printf("%d\n",2%12);
-    // diamond(11);
+    diamond(11);
 }
