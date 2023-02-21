@@ -9,16 +9,27 @@ NODE *Xorop(NODE *x,NODE *y){
     return (NODE *)((unsigned long)(x) ^ (unsigned long)(y));
 }
 
-void xinsert(NODE **current,int itm){
+void xinsert(NODE **first,int itm){
     NODE *newnode;
     newnode=(NODE *)malloc(sizeof(NODE));
     newnode->data=itm;
-    
-    newnode->next=Xorop(*current,NULL);
-    if(*current){
-         (*current)->next=Xorop(newnode,Xorop((*current)->next,NULL));
+    newnode->next=Xorop(*first,NULL);
+    if(*first){
+         (*first)->next=Xorop(newnode,Xorop((*first)->next,NULL));
     }
-    *current=newnode;
+    *first=newnode;
+}
+
+void xtraverse(NODE *first){
+    NODE *curr=first,*prev=NULL,*next;
+    while (curr!=NULL)
+    {
+        printf("%d ",curr->data);
+        next=Xorop(prev,curr->next);
+        prev=curr;
+        curr=next;
+    }
+    printf("error");
 }
 
 int main(){
@@ -44,7 +55,11 @@ int main(){
     freeList(first);
 
     NODE *xlist;
-    xinsert(&xlist,1);
+    for(int z=0;z<20;z++){
+        xinsert(&xlist,z);
+    }
+    xtraverse(xlist);
+    
 
     // showbinary(4);
     // showbinary(bitwiz(4,1,set));

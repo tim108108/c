@@ -202,10 +202,21 @@ void diamond(int a){
         diamond(a+3);
 }
 
+int GCD(int a,int b){
+    int r;
+    r=a%b;
+    if(r==0)
+        return b;
+    else 
+        return GCD(b,r);
+}
+
 void main(){
-    sizeQ();
+    // sizeQ();
     // for(int i=0;i<40;i++){
     //     printf("%llu\n",fib(i));
     // }
-    diamond(11);
+    printf("%d\n",GCD(18,12));
+    printf("%d\n",2%12);
+    // diamond(11);
 }
