@@ -215,7 +215,7 @@ void bubble_sort(int *arr,int len){
     for(int i=0;i<len;i++){
         for(int j=0;j<i;j++){
             if(arr[i]<arr[j]){
-                printf("i:%d,j:%d\n",i,j);
+                //printf("i:%d,j:%d\n",i,j);
                 int tmp=arr[i];
                 arr[i]=arr[j];
                 arr[j]=tmp;
@@ -224,10 +224,19 @@ void bubble_sort(int *arr,int len){
     }
 }
 
-void main(){
+void insertion_sort(int *arr,int len){
+    
+}
+
+int main(){
     // sizeQ();
     // for(int i=0;i<40;i++){
     //     printf("%llu\n",fib(i));
     // }
-    diamond(11);
+    int a[]={1,2,3,4,13,5,9,8};
+    bubble_sort(a,8);
+    for (int i=0;i<8;i++){
+    printf("%d,",a[i]);
+    }
+    printf("\n");
 }
