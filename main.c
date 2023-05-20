@@ -32,6 +32,13 @@ void xtraverse(NODE *first){
     printf("error");
 }
 
+void fun_a(int num){
+    printf("a%d\n",num);
+}
+void fun_b(int num){
+    printf("b%d\n",num);
+}
+
 int main(){
     printf("This is c !!\n");
     char s[]="This is a Test.";
@@ -53,13 +60,23 @@ int main(){
     printList(Qpop(first));
     printList(first);
     freeList(first);
+        
+    /*function pointer*/ 
+    void (*Fun_a)(int) = &fun_a;
+    void (*Fun_b)(int) = &fun_b;
+    Fun_a(12);
+    Fun_b(13);
 
-    NODE *xlist;
-    for(int z=0;z<20;z++){
-        xinsert(&xlist,z);
-    }
-    xtraverse(xlist);
-    
+    typedef struct 
+    {
+        void (*point_a)();
+        void (*point_b)();
+    }oop;
+    oop OOP;
+    OOP.point_a=&fun_a;
+    OOP.point_b=&fun_b;
+    OOP.point_a(14);
+    OOP.point_b(15);
 
     // showbinary(4);
     // showbinary(bitwiz(4,1,set));
